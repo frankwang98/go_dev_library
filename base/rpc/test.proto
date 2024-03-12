@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "./server/examplepb"; // protoc --go_out=. --go-grpc_out=. test.proto grpc程序有问题
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloResponse) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string message = 1;
+}
